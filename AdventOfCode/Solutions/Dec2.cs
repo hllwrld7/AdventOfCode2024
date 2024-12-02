@@ -1,50 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace AdventOfCode
+namespace AdventOfCode.Solutions
 {
-    internal class Solutions
+    internal static class Dec2
     {
-        public Solutions() { }
-
-        public string Dec1_Part1()
-        {
-            InputReader.Dec1(out var list1, out var list2);
-
-            list1.Sort();
-            list2.Sort();
-
-            var count = 0;
-
-            for(int i = 0; i < list1.Count; i++)
-            {
-                count += Math.Abs(list1[i] - list2[i]);
-            }
-
-            return count.ToString();
-        }
-
-        public string Dec1_Part2()
-        {
-            InputReader.Dec1(out var list1, out var list2);
-
-            var similarityScore = 0;
-
-            foreach (var number in list1)
-            {
-                var count = list2.Count(x => x == number);
-                similarityScore += count * number;
-            }
-
-            return similarityScore.ToString();
-        }
-
-        public string Dec2_Part1()
+        internal static string Part1()
         {
             InputReader.Dec2(out var list);
 
@@ -55,7 +19,8 @@ namespace AdventOfCode
                 var previousNumber = report[0];
                 var state = 0; // 1 = inc; 2 = dec
 
-                for (var i = 1; i < report.Count; i++) {
+                for (var i = 1; i < report.Count; i++)
+                {
 
                     var number = report[i];
 
@@ -88,7 +53,7 @@ namespace AdventOfCode
             return safeReports.ToString();
         }
 
-        public string Dec2_Part2()
+        internal static string Part2()
         {
             InputReader.Dec2(out var list);
 
