@@ -48,5 +48,13 @@ namespace AdventOfCode
             }
 
         }
+
+        internal static void Dec3(out string text)
+        {
+            var textLines = File.ReadAllLines("..\\..\\..\\Inputs\\Dec3.txt");
+            text = "";
+            foreach (var line in textLines)
+                text += line;
+        }
     }
 }

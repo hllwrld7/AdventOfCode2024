@@ -8,5 +8,9 @@ Console.WriteLine();
 
 Console.WriteLine("Dec 2 part 1 : " + Dec2.Part1());
 Console.WriteLine("Dec 2 part 2 : " + Dec2.Part2());
+Console.WriteLine();
+
+Console.WriteLine("Dec 3 part 1 : " + Dec3.Part1());
+Console.WriteLine("Dec 3 part 2 : " + Dec3.Part2());
 
 Console.ReadLine();
