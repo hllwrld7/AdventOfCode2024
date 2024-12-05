@@ -56,5 +56,31 @@ namespace AdventOfCode
             foreach (var line in textLines)
                 text += line;
         }
+
+        internal static void Dec4(out List<string> list)
+        {
+            list = File.ReadAllLines("..\\..\\..\\Inputs\\Dec4.txt").ToList();
+        }
+
+        internal static void Dec4(out List<string> rules, out List<string> data)
+        {
+            var lines = File.ReadAllLines("..\\..\\..\\Inputs\\Dec5.txt").ToList();
+            var emptyLinePassed = false;
+            rules = new List<string>();
+            data = new List<string>();
+
+            foreach (var line in lines)
+            {
+                if (string.IsNullOrEmpty(line))
+                {
+                    emptyLinePassed = true;
+                    continue;
+                }
+                if (emptyLinePassed)
+                    data.Add(line);
+                else
+                    rules.Add(line);
+            }
+        }
     }
 }
